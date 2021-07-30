@@ -1,6 +1,6 @@
 name: 'SimpleLocalize'
 description: 'Translation Management for software projects'
-color: blue
+color: 'blue'
 inputs:
   command:
     description: 'Command to run'
