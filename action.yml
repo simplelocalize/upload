@@ -2,7 +2,7 @@ name: 'SimpleLocalize'
 description: 'Translation Management for software projects'
 author: "Jakub Pomykała"
 branding:
-  icon: 'box'
+  icon: 'globe'
   color: 'blue'
 inputs:
   command:
