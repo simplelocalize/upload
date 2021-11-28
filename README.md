@@ -1,4 +1,4 @@
-# Upload tranlsation files to SimpleLocalize i18n editor
+# Upload translation files to SimpleLocalize i18n editor
 
 This Github Actions uses official and open-source SimpleLocalize CLI.
 
