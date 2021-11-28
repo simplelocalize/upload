@@ -1,14 +1,10 @@
-name: 'SimpleLocalize'
-description: 'Translation Management for software projects'
-author: "Jakub Pomykała"
+name: 'SimpleLocalize Upload'
+description: 'Upload i18n files to the SimpleLocalize translation management platform.'
+author: "SimpleLocalize"
 branding:
-  icon: 'globe'
+  icon: 'upload-cloud'
   color: 'blue'
 inputs:
-  command:
-    description: 'Command to run'
-    required: true
-    default: 'sync'
   apiKey:
     description: 'API Key for the project'
     required: true
@@ -25,22 +21,6 @@ inputs:
     description: 'In which format do you upload the files'
     required: false
     default: 'multi-language-json'
-  downloadPath:
-    description: 'Which files should be downloaded'
-    required: false
-    default: './messages.json'
-  downloadFormat:
-    description: 'In which format do you want to download the files'
-    required: false
-    default: 'multi-language-json'
-  projectType:
-    description: 'i18n library'
-    required: false
-    default: 'react-intl'
-  searchDir:
-    description: 'Where CLI should look for files'
-    required: false
-    default: './'
 runs:
   using: "composite"
   steps:
@@ -49,11 +29,4 @@ runs:
       shell: bash
     - id: Execution
       shell: bash
-      run: |
-        if [ ${{ inputs.command }} = "upload" ]; then
-           simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }}
-        fi
-
-        if [ ${{ inputs.command }} = "download" ]; then
-           simplelocalize download --apiKey ${{ inputs.apiKey }} --downloadPath ${{ inputs.downloadPath }} --downloadFormat ${{ inputs.downloadFormat }}
-        fi
+      run: simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }}
