@@ -12,7 +12,7 @@ Documentation: https://simplelocalize.io/docs/cli/upload-translations/
 name: 'Upload translations'
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
 
 jobs:
   build:
@@ -20,9 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Upload translations
-        uses: simplelocalize/upload@2.0
+        uses: simplelocalize/upload@latest
         with:
           apiKey: <YOUR_API_KEY>
-          uploadPath: ./input-sample.json
-          uploadFormat: multi-language-json
+          uploadPath: ./{ns}/{lang}/input-sample.json
+          uploadFormat: single-language-json
+          uploadOptions: "PUBLISH_AFTER_IMPORT,TRIM_LEADING_TRIALING_SPACES" # optional
+          languageKey: en # optional, it supports only one language key
 ```
