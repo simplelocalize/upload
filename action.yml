@@ -10,7 +10,7 @@ inputs:
     required: true
     default: ''
   uploadPath:
-    description: 'Where files should be downloaded'
+    description: 'Which files should be uploaded'
     required: false
     default: './messages.json'
   uploadFormat:
@@ -18,7 +18,7 @@ inputs:
     required: false
     default: 'multi-language-json'
   uploadOptions:
-    description: 'Choose additional download options'
+    description: 'Choose additional upload options'
     required: false
     default: ''
 runs:
