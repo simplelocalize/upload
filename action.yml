@@ -9,10 +9,6 @@ inputs:
     description: 'API Key for the project'
     required: true
     default: ''
-  languageKey:
-    description: 'Language key'
-    required: false
-    default: 'en'
   uploadPath:
     description: 'Which files should be uploaded'
     required: false
@@ -21,12 +17,16 @@ inputs:
     description: 'In which format do you upload the files'
     required: false
     default: 'multi-language-json'
+  uploadOptions:
+    description: 'Upload options'
+    required: false
+    default: ''
 runs:
   using: "composite"
   steps:
     - id: Setup
-      run: curl -s https://get.simplelocalize.io/install | bash
+      run: curl -s https://get.simplelocalize.io/2.0/install | bash
       shell: bash
     - id: Execution
       shell: bash
-      run: simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }}
+      run: simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }} --uploadOptions ${{ inputs.uploadOptions }}
