@@ -26,5 +26,5 @@ jobs:
           uploadPath: ./{lang}/translations.json
           uploadFormat: single-language-json
           uploadOptions: "PUBLISH_AFTER_IMPORT,TRIM_LEADING_TRIALING_SPACES" # optional
-          languageKey: en # optional, it accepts only one lanauge key
+          languageKey: en # optional, it accepts only one language key
 ```
