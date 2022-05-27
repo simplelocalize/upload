@@ -1,4 +1,4 @@
-# Upload translation files to SimpleLocalize i18n editor
+# Upload localization files to SimpleLocalize
 
 This Github Actions uses official and open-source SimpleLocalize CLI.
 
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Upload translations
-        uses: simplelocalize/upload@1.0.0
+        uses: simplelocalize/upload@latest
         with:
           apiKey: <YOUR_API_KEY>
           uploadPath: ./input-sample.json
