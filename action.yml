@@ -1,24 +1,24 @@
-name: 'SimpleLocalize Upload'
-description: 'Upload i18n files to the SimpleLocalize translation management platform.'
+name: 'Upload localization files'
+description: 'Upload localization files to SimpleLocalize translation editor'
 author: "SimpleLocalize"
 branding:
   icon: 'upload-cloud'
   color: 'blue'
 inputs:
   apiKey:
-    description: 'API Key for the project'
+    description: 'Project API Key'
     required: true
     default: ''
   uploadPath:
-    description: 'Which files should be uploaded'
+    description: 'Where files should be downloaded'
     required: false
     default: './messages.json'
   uploadFormat:
-    description: 'In which format do you upload the files'
+    description: 'Choose a localization files format'
     required: false
     default: 'multi-language-json'
   uploadOptions:
-    description: 'Upload options'
+    description: 'Choose additional download options'
     required: false
     default: ''
 runs:
