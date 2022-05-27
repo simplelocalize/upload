@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Upload translations
-        uses: simplelocalize/upload@latest
+        uses: simplelocalize/upload@2.0
         with:
           apiKey: <YOUR_API_KEY>
           uploadPath: ./input-sample.json
