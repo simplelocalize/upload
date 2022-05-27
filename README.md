@@ -23,8 +23,8 @@ jobs:
         uses: simplelocalize/upload@latest
         with:
           apiKey: <YOUR_API_KEY>
-          uploadPath: ./{ns}/{lang}/input-sample.json
+          uploadPath: ./{lang}/input-sample.json
           uploadFormat: single-language-json
           uploadOptions: "PUBLISH_AFTER_IMPORT,TRIM_LEADING_TRIALING_SPACES" # optional
-          languageKey: en # optional, it supports only one language key
+          languageKey: en # optional, it accepts only one lanauge key
 ```
