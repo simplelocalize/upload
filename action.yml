@@ -21,6 +21,10 @@ inputs:
     description: 'Choose additional upload options'
     required: false
     default: ''
+  languageKey:
+    description: 'Upload translations with language key'
+    required: false
+    default: ''
 runs:
   using: "composite"
   steps:
@@ -29,4 +33,4 @@ runs:
       shell: bash
     - id: Execution
       shell: bash
-      run: simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }} ${{ inputs.uploadOptions && '--uploadOptions' }} ${{ inputs.uploadOptions }}
+      run: simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }} ${{ inputs.uploadOptions && '--uploadOptions' }} ${{ inputs.uploadOptions }} ${{ inputs.languageKey && '--languageKey' }} ${{ inputs.languageKey }}
