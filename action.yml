@@ -29,4 +29,4 @@ runs:
       shell: bash
     - id: Execution
       shell: bash
-      run: simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }} --uploadOptions ${{ inputs.uploadOptions }}
+      run: simplelocalize upload --apiKey ${{ inputs.apiKey }} --uploadPath ${{ inputs.uploadPath }} --uploadFormat ${{ inputs.uploadFormat }} ${{ inputs.uploadOptions && '--uploadOptions' }} ${{ inputs.uploadOptions }}
