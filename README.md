@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Upload translations
-        uses: simplelocalize/upload@latest
+        uses: simplelocalize/upload@v2.1
         with:
           apiKey: <YOUR_API_KEY>
           uploadPath: ./{lang}/translations.json
