@@ -29,7 +29,7 @@ runs:
   using: "composite"
   steps:
     - id: Setup
-      run: curl -s https://get.simplelocalize.io/2.0/install | bash
+      run: curl -s https://get.simplelocalize.io/2.1/install | bash
       shell: bash
     - id: Execution
       shell: bash
